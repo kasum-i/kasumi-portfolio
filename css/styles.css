@@ -505,8 +505,8 @@ html {
 
 /* 小型スマホ対応：540px以下 */
 @media (max-width: 540px) {
-  .logo img {
-    width: 90px;
+  .header-content {
+    padding: 8px 16px;
   }
 
   .hero-title {
