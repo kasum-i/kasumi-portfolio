@@ -458,10 +458,6 @@ html {
 
 /* タブレット対応：1024px以下 */
 @media (max-width: 1024px) {
-  .header-content {
-    padding: 8px 24px;
-  }
-
   .navigation {
     display: flex;
     gap: 16px;
