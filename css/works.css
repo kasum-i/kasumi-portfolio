@@ -1,0 +1,357 @@
+/* works.css */
+
+/* Work Detail Section */
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 72px;
+  padding: 80px 40px 40px;
+  background-color: var(--white);
+}
+
+.project-detail .works-grid {
+  grid-template-columns: 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Project-Summary */
+.project-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 72px;
+  padding: 40px;
+  background-color: var(--base);
+}
+
+.project-content {
+  display: block;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+  padding-left: 1.5em;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.project-list li ul {
+  list-style-type: disc;
+  margin-left: 1em;
+  line-height: 170%;
+}
+
+.project-list li {
+  color: var(--text);
+  line-height: 170%;
+}
+
+/* Project-Preview */
+.project-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 72px;
+  padding: 40px 80px;
+  background-color: var(--base);
+}
+
+.project-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.image-sp {
+  width: 24%;
+  max-width: 360px;
+  height: auto;
+}
+
+.image-pc {
+  width: 76%;
+  max-width: 700px;
+  height: auto;
+}
+
+.image-card {
+  width: 30%;
+  max-width: 500px;
+  height: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.image-graphic {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.project-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 800px;
+}
+
+.project-images img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  box-sizing: border-box;
+}
+
+.img-vertical {
+  aspect-ratio: 9 / 16;
+  grid-row: 1 / span 2;
+  grid-column: 1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.img-horizontal {
+  aspect-ratio: 1200 / 628;
+  grid-row: 1;
+  grid-column: 2;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.img-horizontal-medium {
+  aspect-ratio: 1200 / 1000;
+  grid-row: 1;
+  grid-column: 2;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.img-square {
+  aspect-ratio: 1 / 1;
+  grid-row: 2;
+  grid-column: 2;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Other Works Section */
+.works-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+  padding: 40px 40px 80px;
+  background-color: var(--white);
+}
+
+.work-block,
+.hscroll-wrap {
+  width: 100%;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.work-card {
+  padding: 0;
+}
+
+/* Animation */
+.otherWorks-grid--hscroll {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  list-style: none;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding: 8px 40px;
+  padding-block: 8px;
+  padding-inline: calc(var(--arrow-size) + var(--arrow-gap) + 16px);
+  scroll-padding-inline: calc(var(--arrow-size) + var(--arrow-gap) + 16px);
+  scrollbar-width: none;
+}
+
+.hscroll-wrap::before,
+.hscroll-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+
+.hscroll-wrap::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0;
+}
+
+.hscroll-wrap::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0;
+}
+
+.hscroll-wrap.show-left-fade::before {
+  opacity: 1;
+}
+.hscroll-wrap.show-right-fade::after {
+  opacity: 1;
+}
+
+.otherWorks-grid--hscroll::-webkit-scrollbar {
+  display: none;
+}
+
+.otherWorks-grid--hscroll > li {
+  flex: 0 0 calc((100% - 32px) / 3);
+  scroll-snap-align: start;
+}
+
+.otherWorks-grid--hscroll .work-card {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.otherWorks-grid--hscroll .work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.otherWorks-grid--hscroll.no-snap {
+  scroll-snap-type: none;
+}
+
+.hscroll-wrap {
+  position: relative;
+}
+
+.hscroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: auto;
+  right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  z-index: 10;
+
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--app-accent);
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.hscroll-btn:hover {
+  color: var(--text);
+}
+.hscroll-btn:focus,
+.hscroll-btn:focus-visible {
+  outline: none;
+}
+
+.hscroll-prev {
+  left: 8px;
+}
+.hscroll-next {
+  right: 8px;
+}
+
+/* Responsive Design */
+/* タブレット対応：853px以下 */
+@media (max-width: 853px) {
+  .project-detail,
+  .project-description,
+  .project-preview,
+  .works-section {
+    gap: 56px;
+  }
+
+  .project-image {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-sp,
+  .image-pc,
+  .image-card {
+    width: 100%;
+  }
+
+  .otherWorks-grid--hscroll > li {
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+}
+
+/* 小型スマホ対応：540px以下 */
+@media (max-width: 540px) {
+  .project-preview {
+    padding: 40px;
+  }
+
+  .project-images {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .img-horizontal {
+    order: 1;
+  }
+
+  .img-horizontal-medium {
+    order: 2;
+  }
+
+  .img-square {
+    order: 3;
+  }
+
+  .img-vertical {
+    order: 4;
+  }
+
+  .otherWorks-grid--hscroll > li {
+    flex: 0 0 100%;
+  }
+}
