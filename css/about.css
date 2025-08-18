@@ -1,0 +1,195 @@
+/* about.css */
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 72px;
+  padding: 80px 40px 40px;
+  background-color: var(--base);
+}
+
+.profile-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid var(--app-accent);
+  position: relative;
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 24px;
+}
+
+.timeline .dot {
+  position: absolute;
+  left: -7px;
+  top: 30%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: var(--app-accent);
+  border-radius: 50%;
+}
+
+.timeline-content .profile-year {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.timeline-content .profile-detail {
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.about-image {
+  width: min(100%, 360px);
+  height: auto;
+}
+
+/* Service Section */
+.service-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 72px;
+  padding: 40px;
+  background-color: var(--white);
+}
+
+.service-content {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.sp-br {
+  display: none;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+  padding-left: 1.5em;
+}
+
+.service-list li {
+  color: var(--text);
+  line-height: 170%;
+}
+
+/* Skill Section */
+.skill-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 40px 40px 80px;
+  gap: 72px;
+  background-color: var(--base);
+}
+
+.skill-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 32px;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 800px;
+  gap: 16px;
+}
+
+.skill-label {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--text);
+  background-color: var(--app-accent-light);
+  border-radius: 10px;
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+  padding-left: 1.5em;
+}
+
+.skill-list li {
+  color: var(--text);
+  line-height: 170%;
+}
+
+/* Responsive Design */
+/* タブレット対応：853px以下 */
+@media (max-width: 853px) {
+  .profile-section {
+    gap: 56px;
+    padding: 80px 40px 0px;
+  }
+
+  .service-section {
+    gap: 56px;
+    padding: 60px 40px 20px;
+  }
+
+  .skill-section {
+    gap: 56px;
+    padding: 60px 40px 80px;
+  }
+
+  .profile-content,
+  .service-content,
+  .skill-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .about-image {
+    max-width: 320px;
+  }
+}
+
+/* 小型スマホ対応：540px以下 */
+@media (max-width: 540px) {
+  .sp-br {
+    display: inline;
+  }
+}
